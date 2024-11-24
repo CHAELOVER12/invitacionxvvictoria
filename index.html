@@ -46,7 +46,7 @@
         }
         .carousel-container h1 {
             position: absolute;
-            top: 80%;
+            bottom: 10%;  /* Cambié la posición para que esté en la parte inferior */
             left: 50%;
             transform: translateX(-50%);
             color: white;
@@ -76,7 +76,7 @@
         .countdown {
             background-image: url('vito13.jpeg'); /* Reemplaza con la imagen deseada */
             background-size: cover;
-            padding: 250px;
+            padding: 100px;
             text-align: center;
             color: white;
             background-position: center;
@@ -156,18 +156,18 @@
             margin-top: 40px;
         }
         .gallery img {
-        width: 30%;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        object-fit: cover;
-    }
-    .gallery img.alt-vito7, 
-    .gallery img.alt-vito8, 
-    .gallery img.alt-vito12 {
-        object-fit: contain; /* Ajustar contenido en vez de recortar */
-        height: auto;       /* Mantener altura proporcional */
-        max-width: 30%;
-    }
+            width: 30%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+        }
+        .gallery img.alt-vito7, 
+        .gallery img.alt-vito8, 
+        .gallery img.alt-vito12 {
+            object-fit: contain; /* Ajustar contenido en vez de recortar */
+            height: auto;       /* Mantener altura proporcional */
+            max-width: 30%;
+        }
 
         /* Opciones de Regalo */
         .gifts {
@@ -190,12 +190,41 @@
             width: 80px;
             margin-right: 15px;
         }
+
+        /* Media Query para pantallas pequeñas */
+        @media (max-width: 768px) {
+            .carousel-container h1 {
+                font-size: 1.5rem; /* Tamaño de fuente más pequeño en dispositivos móviles */
+            }
+            .countdown h3 {
+                font-size: 1.5rem;
+            }
+            .countdown p {
+                font-size: 1.2rem;
+            }
+            .carousel-container h5 {
+                font-size: 1.5rem;
+            }
+            .gallery img {
+                width: 30%; /* Ajuste en la galería */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-container h1 {
+                font-size: 1.2rem; /* Más pequeño aún en pantallas muy pequeñas */
+            }
+            .countdown h3 {
+                font-size: 1.2rem;
+            }
+            .countdown p {
+                font-size: 1rem;
+            }
+        }
+
     </style>
 </head>
 <body>
-<!-- Resto del código HTML -->
-
-
 
 <!-- Carrusel -->
 <div class="carousel-container">
@@ -203,7 +232,7 @@
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="vito1.jpeg" class="d-block w-100" alt="...">
+                <img src="vito6.jpeg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
                 <img src="vito2.jpeg" class="d-block w-100" alt="...">
@@ -215,6 +244,7 @@
     </div>
     <h1>Victoria Noemi</h1>
 </div>
+
 <!-- Canción -->
 <audio id="miAudio">
     <source src="La Bella y la Bestia (De La Bella y la Bestia) [Versión Instrumental con Orquesta Filarmónica].mp3" type="audio/mpeg">
@@ -303,7 +333,7 @@
     
     <img src="vito4.jpeg" alt="Foto 1">
     <img src="vito5.jpeg" alt="Foto 2">
-    <img src="vito6.jpeg" alt="Foto 3">
+    <img src="vito3.jpeg" alt="Foto 3">
     <img src="vito7.jpeg" alt="Foto 4" class="alt-vito7">
     <img src="vito9.jpeg" alt="Foto 6">
     <img src="vito10.jpeg" alt="Foto 7">
