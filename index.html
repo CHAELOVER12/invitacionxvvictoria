@@ -221,7 +221,18 @@
                 font-size: 1rem;
             }
         }
+        #form-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh; /* Centrar verticalmente */
+    }
 
+    iframe {
+      border: none;
+      border-radius: 10px; /* Bordes redondeados */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    }
     </style>
 </head>
 <body>
@@ -306,14 +317,11 @@
 
 
 
-<!-- Zona Asistencia -->
-<div class="assistance-zone">
-    <h2>Confirma tu asistencia</h2>
-    <label for="invitados">Número de invitados:</label>
-    <input type="number" id="invitados" min="1" value="1" class="form-control">
-    <a href="#" id="whatsapp-link" class="btn-confirm">Confirmar Asistencia</a>
-</div>
-
+<div id="confirmar-asistencia">
+    <h2>Confirmar Asistencia</h2>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSej_rdHTzp1hBsrVW2avV7Xhgn6hvY8szC44U5tvV58KOq4iA/viewform?embedded=true" width="640" height="968" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+  </div>
+  
 <!-- Opciones de Regalo -->
 <div class="gifts">
     <h2>Opciones de Regalo</h2>
@@ -372,14 +380,9 @@
     const countdownInterval = setInterval(updateCountdown, 1000);
 </script>
 
-<script>
-    document.getElementById('whatsapp-link').addEventListener('click', function() {
-        var invitados = document.getElementById('invitados').value;
-        var mensaje = "Asistiré a la fiesta con " + invitados + " invitados.";
-        var telefono = "528113693024"; // Reemplaza con el número de WhatsApp al que se enviará el mensaje
-        var url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
-        window.open(url, '_blank');
-    });
+
+
+
 </script>
 
 <!-- Bootstrap JS -->
