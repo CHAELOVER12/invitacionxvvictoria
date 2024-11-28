@@ -221,18 +221,26 @@
                 font-size: 1rem;
             }
         }
-        #form-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh; /* Centrar verticalmente */
-    }
+        #confirmar-asistencia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 20px auto; /* Centrará horizontalmente en pantallas grandes */
+    max-width: 90%; /* Asegura que no desborde en pantallas pequeñas */
+    text-align: center; /* Centra el texto dentro del contenedor */
+}
 
-    iframe {
-      border: none;
-      border-radius: 10px; /* Bordes redondeados */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
-    }
+#confirmar-asistencia iframe {
+    width: 100%; /* Asegura que el iframe se ajuste al contenedor */
+    max-width: 640px; /* Define un ancho máximo para pantallas grandes */
+    height: auto; /* Permite un ajuste dinámico en dispositivos pequeños */
+    aspect-ratio: 3/4; /* Mantiene una proporción */
+    border: none;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
     </style>
 </head>
 <body>
@@ -319,8 +327,9 @@
 
 <div id="confirmar-asistencia">
     <h2>Confirmar Asistencia</h2>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSej_rdHTzp1hBsrVW2avV7Xhgn6hvY8szC44U5tvV58KOq4iA/viewform?embedded=true" width="640" height="968" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
-  </div>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSej_rdHTzp1hBsrVW2avV7Xhgn6hvY8szC44U5tvV58KOq4iA/viewform?embedded=true"></iframe>
+</div>
+
   
 <!-- Opciones de Regalo -->
 <div class="gifts">
