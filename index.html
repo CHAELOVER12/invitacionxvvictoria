@@ -103,19 +103,33 @@
         .countdown {
     background-image: url('vito13.jpeg');
     background-size: cover;
+    background-position: center;
     text-align: center;
     color: white;
-    padding: 20px 20px; /* Reducimos el padding para subir el contenido */
-    margin-top: -50px; /* Ajustamos la posición hacia arriba */
-    position: relative; /* Permite mover elementos dentro de la sección */
+    padding: 50px 20px;
+    position: relative;
+    height: 300px; /* Mantiene un tamaño fijo para la imagen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-        .countdown h3 {
-            font-size: 2rem;
-        }
-        .countdown p {
-            font-size: 1.5rem;
-        }
+.countdown h3, .countdown p {
+    position: relative;
+    top: -30px; /* Movemos solo el texto hacia arriba */
+    margin: 0;
+}
+
+.countdown h3 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.countdown p {
+    font-size: 1.8rem;
+}
+
 
         /* Zona lo que debes saber */
         .zone {
