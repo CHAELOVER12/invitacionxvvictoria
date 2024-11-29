@@ -46,7 +46,7 @@
         }
         .carousel-container h1 {
             position: absolute;
-            bottom: 10%;  /* Cambié la posición para que esté en la parte inferior */
+            bottom: 10%;
             left: 50%;
             transform: translateX(-50%);
             color: white;
@@ -161,13 +161,6 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             object-fit: cover;
         }
-        .gallery img.alt-vito7, 
-        .gallery img.alt-vito8, 
-        .gallery img.alt-vito12 {
-            object-fit: contain; /* Ajustar contenido en vez de recortar */
-            height: auto;       /* Mantener altura proporcional */
-            max-width: 30%;
-        }
 
         /* Opciones de Regalo */
         .gifts {
@@ -194,53 +187,15 @@
         /* Media Query para pantallas pequeñas */
         @media (max-width: 768px) {
             .carousel-container h1 {
-                font-size: 1.5rem; /* Tamaño de fuente más pequeño en dispositivos móviles */
-            }
-            .countdown h3 {
                 font-size: 1.5rem;
             }
-            .countdown p {
-                font-size: 1.2rem;
-            }
-            .carousel-container h5 {
+            .countdown h3 {
                 font-size: 1.5rem;
             }
             .gallery img {
-                width: 30%; /* Ajuste en la galería */
+                width: 100%;
             }
         }
-
-        @media (max-width: 480px) {
-            .carousel-container h1 {
-                font-size: 1.2rem; /* Más pequeño aún en pantallas muy pequeñas */
-            }
-            .countdown h3 {
-                font-size: 1.2rem;
-            }
-            .countdown p {
-                font-size: 1rem;
-            }
-        }
-        #confirmar-asistencia {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    margin: 20px auto; /* Centrará horizontalmente en pantallas grandes */
-    max-width: 90%; /* Asegura que no desborde en pantallas pequeñas */
-    text-align: center; /* Centra el texto dentro del contenedor */
-}
-
-#confirmar-asistencia iframe {
-    width: 100%; /* Asegura que el iframe se ajuste al contenedor */
-    max-width: 640px; /* Define un ancho máximo para pantallas grandes */
-    height: auto; /* Permite un ajuste dinámico en dispositivos pequeños */
-    aspect-ratio: 3/4; /* Mantiene una proporción */
-    border: none;
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
-}
     </style>
 </head>
 <body>
@@ -325,12 +280,14 @@
 
 
 
-<div id="confirmar-asistencia">
-    <h2>Confirmar Asistencia</h2>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSej_rdHTzp1hBsrVW2avV7Xhgn6hvY8szC44U5tvV58KOq4iA/viewform?embedded=true"></iframe>
+<!-- Zona Asistencia -->
+<div class="assistance-zone">
+    <h2>Confirma tu asistencia</h2>
+    <label for="invitados">Número de invitados:</label>
+    <input type="number" id="invitados" min="1" value="1" class="form-control">
+    <a href="#" id="whatsapp-link" class="btn-confirm">Confirmar Asistencia</a>
 </div>
 
-  
 <!-- Opciones de Regalo -->
 <div class="gifts">
     <h2>Opciones de Regalo</h2>
@@ -389,9 +346,14 @@
     const countdownInterval = setInterval(updateCountdown, 1000);
 </script>
 
-
-
-
+<script>
+    document.getElementById('whatsapp-link').addEventListener('click', function() {
+        var invitados = document.getElementById('invitados').value;
+        var mensaje = "Asistiré a la fiesta con " + invitados + " invitados.";
+        var telefono = "528113693024"; // Reemplaza con el número de WhatsApp al que se enviará el mensaje
+        var url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
+        window.open(url, '_blank');
+    });
 </script>
 
 <!-- Bootstrap JS -->
